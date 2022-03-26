@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous">
+    <style>
+      .card {
+        background: #eee;
+        box-shadow: rgb(0 0 0 / 20%) 2px 2px 5px;
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="fav.ico" type="image">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/fav/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/fav/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'img/fav/site.webmanifest' %}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <title> {% block title %} Лев Толстой – зеркало русской революции. {% endblock %} </title> 
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+    <main>
+      <div class="container py-5"> 
+        {%block content%}
+        {% endblock %}
+      </div>
+    </main>
+    {% include 'includes/footer.html' %}
+  </body>
+</html>
