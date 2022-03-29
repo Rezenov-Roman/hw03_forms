@@ -26,6 +26,9 @@
           все посты пользователя
         </a>
       </li>
+      <li class="list-group-item">
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Редактировать<span class="glyphicon glyphicon-pencil"></span></a>
+      </li>
     </ul>
   </aside>
   <article class="col-12 col-md-9">

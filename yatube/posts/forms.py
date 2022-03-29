@@ -5,14 +5,19 @@ from .models import Post, Group
 
 
 User = get_user_model()
-CHOICES_GROUPS = {
-    #'cats': cats,
-    #'dogs': dogs,
-}
+
 
 class PostForm(forms.ModelForm):
     class Meta():
         model = Post
         fields = ('text', 'group',) 
-    text = forms.CharField(widget=forms.Textarea, label='Текст поста')
-    group = forms.ChoiceField(required = False, label='Group', choices=CHOICES_GROUPS)
+        labels = {
+            'text': 'Автор',
+            'group': 'Название группы',
+        }
+        help_texts = {
+            'text': 'Напишите пост здесь',
+            'group': 'Выберите свою группу',
+        }
+    text = forms.CharField(widget=forms.Textarea)
+    group = forms.ModelChoiceField(Group.objects.all(), required = False)
