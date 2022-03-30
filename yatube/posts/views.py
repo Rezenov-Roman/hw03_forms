@@ -49,8 +49,8 @@ def profile(request, username):
     return render(request, template, context)
 
 
-def post_detail(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
+def post_detail(request, id):
+    post = get_object_or_404(Post, post_id=id)
     template = 'posts/post_detail.html'
     context = {
         'post': post,
@@ -81,7 +81,8 @@ def post_edit(request, post_id):
         return redirect(f'/posts/{post_id}/')
     form = PostForm(request.POST or None, instance=post)
     if form.is_valid():
-        form.save()
+        post = form.save(commit=False)
+        post.save()
         return redirect(f'/posts/{post_id}/')
     context = {
         'post': post,
