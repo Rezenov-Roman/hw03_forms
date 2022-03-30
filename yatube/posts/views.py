@@ -49,8 +49,8 @@ def profile(request, username):
     return render(request, template, context)
 
 
-def post_detail(request, id):
-    post = get_object_or_404(Post, post_id=id)
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
     template = 'posts/post_detail.html'
     context = {
         'post': post,
