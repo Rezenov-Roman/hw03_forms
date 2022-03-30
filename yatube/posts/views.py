@@ -45,7 +45,7 @@ def profile(request, username):
         'page_obj': page_obj,
         'posts': posts,
         'author': author,
-}
+    }
     return render(request, template, context)
 
 
