@@ -11,7 +11,7 @@ def index(request):
     page_obj = paginator(request, post_list)
     context = {
         'page_obj': page_obj,
-        }
+         }
     template = 'posts/index.html'
     return render(request, template, context)
 
