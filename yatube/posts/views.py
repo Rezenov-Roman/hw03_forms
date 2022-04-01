@@ -9,9 +9,7 @@ from .utils import paginator
 def index(request):
     post_list = Post.objects.all()
     page_obj = paginator(request, post_list)
-    context = {
-        'page_obj': page_obj,
-         }
+    context = {'page_obj': page_obj}
     template = 'posts/index.html'
     return render(request, template, context)
 
