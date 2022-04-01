@@ -18,5 +18,3 @@ class PostForm(forms.ModelForm):
             'text': 'Напишите пост здесь',
             'group': 'Выберите свою группу',
         }
-    text = forms.CharField(widget=forms.Textarea)
-    group = forms.ModelChoiceField(Group.objects.all(), required=False)
