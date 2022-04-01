@@ -1,5 +1,4 @@
 from yatube.settings import NUMBER10
-from .models import Post
 from django.core.paginator import Paginator
 
 

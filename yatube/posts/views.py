@@ -1,10 +1,8 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group, User
 from .forms import PostForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from yatube.settings import NUMBER10
 from .utils import paginator
 
 
@@ -12,8 +10,8 @@ def index(request):
     post_list = Post.objects.all()
     page_obj = paginator(request, post_list)
     context = {
-               'page_obj': page_obj,
-               }
+        'page_obj': page_obj,
+}
     template = 'posts/index.html'
     return render(request, template, context)
 
