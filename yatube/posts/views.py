@@ -45,8 +45,6 @@ def post_detail(request, post_id):
     context = {
         'post': post,
     }
-    if request.user == post.author:
-        context['is_author'] = True
     return render(request, template, context)
 
 
