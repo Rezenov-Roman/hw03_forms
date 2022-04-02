@@ -26,7 +26,7 @@
           все посты пользователя
         </a>
       </li>
-      {% if is_author %}
+      {% if request.user == post.author %}
       <li class="list-group-item">
         <a class="btn btn-default" href="{% url 'posts:post_edit' post.id %}">Редактировать<span class="glyphicon glyphicon-pencil"></span></a>
       </li>
