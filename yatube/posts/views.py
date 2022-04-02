@@ -27,10 +27,10 @@ def group_posts(request, slug):
 
 def profile(request, username):
     author = get_object_or_404(User, username=username)
-    posts = Post.objects.filter(author__username=username)
+    posts = Post.objects.filter(author=author)
     page_obj = paginator(request, posts)
     template = 'posts/profile.html'
-    sum_posts = Post.objects.filter(author__username=username).count()
+    sum_posts = Post.objects.filter(author=author).count()
     context = {
         'page_obj': page_obj,
         'sum_posts': sum_posts,
