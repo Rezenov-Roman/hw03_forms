@@ -30,7 +30,7 @@ def profile(request, username):
     posts = Post.objects.filter(author=author)
     page_obj = paginator(request, posts)
     template = 'posts/profile.html'
-    sum_posts = Post.objects.filter(related_posts=author).count()
+    sum_posts = author.posts.all().count()
     context = {
         'page_obj': page_obj,
         'sum_posts': sum_posts,
